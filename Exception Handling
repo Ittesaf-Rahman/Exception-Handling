@@ -1,0 +1,61 @@
+
+'''try:
+    age = int(input("Enter you age : "))
+    if age < 18:
+        raise ValueError
+    else:
+        print('You are not a child')
+except:
+    print("You are a child")'''
+
+
+# Activity 1
+
+print("Activity 1")
+try:
+    num1, num2 = eval(int(input('Enter tow number seperated by comma = ')))
+    result = num1 / num2
+except ZeroDivisionError:
+    print('Change the number that you type Zero = ')
+except SyntaxError:
+    print('Type tow number seperated by comma = ')
+except:
+    print('Somethings went wrong')
+else:
+    print('No, Exception')
+finally:
+    print("Please, Subscribe Know & Grow Programming")
+
+# Activity 2
+print('Activity')
+class NegativeNumberError(Exception):
+    pass
+def calculate_square_root(num):
+    if num < 0:
+        raise NegativeNumberError("Please enter a valid number")
+    else:
+        return num ** 0.5
+try:
+    number = float(input('Enter a number : '))
+    result = calculate_square_root(number)
+    print(f'square root of {number} is {result}')
+except ValueError as e:
+    print(f'ValueError: {e} - Please enter a valid number')
+except NegativeNumberError as e:
+    print(f'NegativeNumberError: {e}')
+except Exception as e:
+    print(f'NegativeNumberError: {e}')
+else:
+    print('Square root calculation was succesfull')
+finally:
+    print('Program exicuation finished')
+
+
+valid = False
+while not valid:
+    try:
+        n = int(input("Enter a number = "))
+        while n % 2 == 0:
+            print('Bye')
+    except ValueError:
+        print('Invalid')
